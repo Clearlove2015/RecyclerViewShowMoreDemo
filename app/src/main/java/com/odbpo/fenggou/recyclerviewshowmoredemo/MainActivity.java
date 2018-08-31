@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.tv_show_more)
     TextView tvShowMore;
 
-    private static final int SHOW_NUM = 7;//收起列表是展示条数
+    private static final int SHOW_NUM = 7;//收起列表时展示条数
 
     private List<Integer> mList = new ArrayList<>();
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setAdapter(new RVAdapter(mList));
     }
 
-    @OnClick(R.id.tv_show_more)
+    @OnClick({R.id.tv_show_more})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_show_more:

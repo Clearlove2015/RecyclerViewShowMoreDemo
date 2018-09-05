@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int SHOW_NUM = 7;//收起列表时展示条数
 
     private List<Integer> mList = new ArrayList<>();
+    private List<Integer> tempList = InitDataUtil.getFData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initList() {
-        if (InitDataUtil.getFData().size() > SHOW_NUM) {
+        if (tempList.size() > SHOW_NUM) {
             mList.clear();
-            for (Integer i : InitDataUtil.getFData()) {
+            for (Integer i : tempList) {
                 mList.add(i);
                 if (mList.size() == SHOW_NUM) {
                     break;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             mList.clear();
-            mList = InitDataUtil.getFData();
+            mList.addAll(tempList);
         }
     }
 
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void hideItem() {
         mList.clear();
-        for (Integer i : InitDataUtil.getFData()) {
+        for (Integer i : tempList) {
             mList.add(i);
             if (mList.size() == SHOW_NUM) {
                 break;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showItem() {
         mList.clear();
-        mList = InitDataUtil.getFData();
+        mList.addAll(tempList);
         rv.setAdapter(new RVAdapter(mList));
     }
 

@@ -18,12 +18,4 @@ public class InitDataUtil {
         return mData;
     }
 
-    public static List<Integer> getSData(){
-        List<Integer> mData = new ArrayList<>();
-        for (int i = 0;i<2;i++){
-            mData.add(i);
-        }
-        return mData;
-    }
-
 }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int SHOW_NUM = 7;//收起列表时展示条数
 
     private List<Integer> mList = new ArrayList<>();
-    private List<Integer> tempList = InitDataUtil.getFData();
+    private List<Integer> tempList = InitDataUtil.getFData();//网络请求返回数据
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
